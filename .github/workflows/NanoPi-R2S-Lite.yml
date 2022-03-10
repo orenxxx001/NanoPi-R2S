@@ -1,13 +1,15 @@
 name: NanoPi-R2S-Lite
 
+
 on:
   repository_dispatch:
   workflow_dispatch:
-  #schedule:
-    #- cron: 0 17 * * *
-  # watch:
-  #   types: started
-
+    inputs:
+      ssh:
+        description: 'SSH connection to Actions'
+        required: false
+        default: 'false'
+        
 env:
   REPO_URL: https://github.com/coolsnowwolf/lede
   REPO_BRANCH: master
